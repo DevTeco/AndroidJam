@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.projetofinal.politicando.MainActivity"
+    android:background="#E0E0E0">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/ben"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:src="@drawable/oie_transparent" />
+
+            <Button
+                android:id="@+id/botao1"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="Constituição Federal"
+                android:layout_below="@+id/ben"
+                android:background="#FFEB3B"
+                android:layout_marginLeft="8sp"
+                android:layout_marginRight="8sp"
+                android:layout_marginBottom="8sp"
+                android:onClick="constituicao"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="Direitos Políticos"
+                android:layout_below="@id/botao1"
+                android:background="#FFEB3B"
+                android:id="@+id/botao2"
+                android:onClick="dirpolitico"
+                android:layout_margin="8sp"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="8sp"
+                android:text="Separação dos Poderes"
+                android:layout_below="@+id/botao2"
+                android:id="@+id/botao3"
+                android:onClick="serpoderes"
+                android:background="#FFEB3B"/>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="Improbidade Administrativa"
+                android:layout_below="@+id/botao3"
+                android:onClick="improadm"
+                android:id="@+id/botao4"
+                android:layout_margin="8sp"
+                android:background="#FFEB3B"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="Impeachment"
+                android:id="@+id/botao5"
+                android:onClick="impeachment"
+                android:layout_margin="8sp"
+                android:layout_below="@+id/botao4"
+                android:background="#FFEB3B"/>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
