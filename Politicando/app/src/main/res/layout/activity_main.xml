@@ -35,10 +35,7 @@
                 android:layout_marginRight="8sp"
                 android:layout_marginBottom="8sp"
                 android:onClick="constituicao"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -47,8 +44,7 @@
                 android:background="#FFEB3B"
                 android:id="@+id/botao2"
                 android:onClick="dirpolitico"
-                android:layout_margin="8sp"
-                />
+                android:layout_margin="8sp" />
 
             <Button
                 android:layout_width="match_parent"
