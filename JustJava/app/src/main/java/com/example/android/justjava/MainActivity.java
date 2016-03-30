@@ -2,7 +2,11 @@ package com.example.android.justjava;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.Editable;
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.android.justjava.R;
@@ -43,33 +47,64 @@ public class MainActivity extends ActionBarActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int price = quantidade * 5;
-        String priceMessage = "Total R$" + price;
-        priceMessage = priceMessage + "\nObrigado!";
-        displayMessage(priceMessage);
+
+        EditText camponome = (EditText) findViewById(R.id.nome_campo);
+        Editable nomeEditavel = camponome.getText();
+        String nome = nomeEditavel.toString();
+
+        CheckBox chocolate = (CheckBox) findViewById(R.id.chocolate);
+        boolean temChocolate = chocolate.isChecked();
+
+        CheckBox cremeDeChantilly = (CheckBox) findViewById(R.id.creme_de_chantilly);
+        boolean temCremeDeChantilly = cremeDeChantilly.isChecked();
+
+        int price = calculatePrice();
+        displayMessage(createOrderSummary(price, temCremeDeChantilly, temChocolate, nome));
+
+    }
+
+    /**
+     * Calculates the price of the order.
+     *
+     * @return total price
+     */
+    private int calculatePrice() {
+
+        return quantidade * 5;
+    }
+
+    /**
+     * Create summary the order
+     *
+     * @param price of the order
+     * @return text summary
+     * @param addCremeDeChantilly diz se o usuario quer ou não o chantilly
+     */
+    private String createOrderSummary(int price, boolean addCremeDeChantilly, Boolean addChocolate, String Nome) {
+
+        String priceMessage = "Nome = " + Nome;
+        priceMessage += "\nAdd Chocolate? " + addChocolate;
+        priceMessage += "\nAdd Creme de Chantilly? " + addCremeDeChantilly;
+        priceMessage += "\nQuantidade = " + quantidade;
+        priceMessage += "\nTotal R$" + price;
+        priceMessage += "\nObrigado!";
+        return priceMessage;
+
     }
 
     /**
      * This method displays the given quantity value on the screen.
      */
     private void displayQuantity(int number) {
-        TextView quantityTextView = (TextView) findViewById(
-                R.id.quantity_text_view);
+        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
-    /**
-     * This method displays the given price on the screen.
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
+
     /**
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView OrderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        OrderSummaryTextView.setText(message);
     }
-
 }
