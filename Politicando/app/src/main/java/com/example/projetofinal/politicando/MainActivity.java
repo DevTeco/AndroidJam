@@ -8,16 +8,24 @@ import android.webkit.WebView;
 
 public class MainActivity extends AppCompatActivity {
 
+     boolean x = false;
+      
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     @Override
     public void onBackPressed() {
-        showPoliticando();
+        
+         if (!x) {
+            super.onBackPresse();
+        }
+          else {
+         showPoliticando();
+          }
+        
     }
 
     public void constituicao(View view) {
