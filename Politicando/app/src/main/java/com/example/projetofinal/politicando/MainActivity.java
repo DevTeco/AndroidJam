@@ -7,8 +7,6 @@ import android.webkit.WebView;
 
 
 public class MainActivity extends AppCompatActivity {
-
-     boolean x = false;
       
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        
-         if (!x) {
-            super.onBackPresse();
-        }
-          else {
          showPoliticando();
-          }
-        
     }
 
     public void constituicao(View view) {
