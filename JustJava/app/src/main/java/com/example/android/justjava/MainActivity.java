@@ -29,7 +29,11 @@ public class MainActivity extends ActionBarActivity {
     /**
      * This method is called when the order button is clicked.
      */
-    public void increment(View view) {;
+    public void increment(View view) {
+        if (quantidade == 100) {
+            Toast.makeText(this, "Você não pode pedir mais do que 100 cafés", Toast.LENGTH_SHORT).show();
+            return;
+        }
         quantidade = quantidade + 1;
         displayQuantity(quantidade);
     }
@@ -38,9 +42,13 @@ public class MainActivity extends ActionBarActivity {
      * This method is called when the minus button is clicked.
      */
     public void decrement(View view) {
-
+            if (quantidade == 1) {
+                Toast.makeText(this, "Você não pode pedir maenos do que 1 café", Toast.LENGTH_SHORT).show();
+                return;
+            }
         quantidade = quantidade - 1;
         displayQuantity(quantidade);
+        
     }
 
     /**
@@ -69,8 +77,17 @@ public class MainActivity extends ActionBarActivity {
      * @return total price
      */
     private int calculatePrice() {
+        int precobase = 5;
+        
+        if (AddCremeDeChantilly) {
+            precobase + 1
+        }
+        
+        if (AddChocolate) {
+            precobase + 2;
+        }
 
-        return quantidade * 5;
+        return quantidade * precobase;
     }
 
     /**
