@@ -20,19 +20,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nome"
-            android:textSize="22dp"
-            android:textAllCaps="true"/>
-
         <EditText
-            android:id="@+id/nome_campo"
-            android:inputType="text"
-            android:layout_width="300dp"
+
+            android:id="@+id/Nome"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"/>
+            android:hint="@string/Nome"
+            android:inputType="Text" />
 
 
         <TextView
